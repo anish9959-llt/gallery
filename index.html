@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>One Month Together ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts for cute typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Lock Screen Overlay -->
+  <div id="lockScreen" class="lock-screen">
+    <div class="card lock-card">
+      <div class="lock-icon">🔒</div>
+      <h2>Secret Space</h2>
+      <p>Enter our special passcode to enter 💕</p>
+      
+      <div class="passcode-container">
+        <input type="password" id="passcodeInput" placeholder="Enter code..." autofocus />
+        <button onclick="checkPasscode()">Unlock</button>
+      </div>
+      
+      <p id="errorMessage" class="error-msg"></p>
+    </div>
+  </div>
+
+  <!-- Floating Hearts Canvas Background -->
+  <canvas id="heartCanvas"></canvas>
+
+  <!-- Hero / Header Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <span class="badge"> ✨✨✨🦢🦢🦢</span>
+      <h1>Time files for realllll!!!</h1>
+      <p class="subtitle">30 days of smiles, laughter, and endless memories with you.</p>
+    </div>
+  </header>
+
+  <!-- Special Message Section -->
+  <section class="message-section">
+    <div class="card message-card">
+      <h2>To the most special girl... 💕</h2>
+      <p>
+        I can't believe it's already been a whole month since we officially started this journey together. 
+        Every moment with you feels special, and I made this little corner just for us to cherish our favorite memories.
+        To the girl who made this past month the happiest one yet—happy 1-month anniversary! 
+        From our late-night chats to every quiet moment in between, having you in my life has made everything brighter. 
+        I wanted to build something special for you to show how much these memories mean to me. 
+        Thank you for being you, and for making me the happiest guy alive.
+      </p>
+    </div>
+  </section>
+
+  <!-- Photo Gallery Section -->
+  <section class="gallery-section">
+    <h2>Our small Gallery 📸</h2>
+    <p class="gallery-sub">Click on any photo to take a closer look!</p>
+    <button class="album-btn" onclick="openAlbum()">View Full Photo Album ✨</button>
+
+    <div class="gallery-grid">
+      <!-- Polaroid Item 1 -->
+      <div class="polaroid" onclick="openModal('images/photo1.jpg', 'First Coffee Date ☕')">
+        <div class="image-wrapper">
+          <img src="images/photo1.jpg" alt="Memory 1" />
+        </div>
+        <div class="caption">First Coffee Date ☕</div>
+      </div>
+
+      <!-- Polaroid Item 2 -->
+      <div class="polaroid" onclick="openModal('images/photo2.jpg', 'Random Cute Selfie 🤳')">
+        <div class="image-wrapper">
+          <img src="images/photo2.jpg" alt="Memory 2" />
+        </div>
+        <div class="caption">Random Cute Selfie 🤳</div>
+      </div>
+
+      <!-- Polaroid Item 3 -->
+      <div class="polaroid" onclick="openModal('images/photo3.jpg', 'Bowing to my queen 👸')">
+        <div class="image-wrapper">
+          <img src="images/photo3.jpg" alt="Memory 3" />
+        </div>
+        <div class="caption">Bowing to my queen 👸</div>
+      </div>
+
+      <!-- Polaroid Item 4 -->
+      <div class="polaroid" onclick="openModal('images/photo4.jpg', 'Random rides 🏍️')">
+        <div class="image-wrapper">
+          <img src="images/photo4.jpg" alt="Memory 4" />
+        </div>
+        <div class="caption">Random rides 🏍️</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Full Photo Album Modal -->
+  <div id="albumModal" class="album-modal">
+    <div class="album-content">
+      <span class="close-album" onclick="closeAlbum()">&times;</span>
+      <h2>Our Small Gallery 💕</h2>
+      <p class="album-sub">Every single moment with you is precious.</p>
+      
+      <!-- Container where JS populates all 26 photos -->
+      <div id="albumGrid" class="album-grid"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Here's to many more months!</p>
+  </footer>
+
+  <!-- Lightbox / Modal for Single Photo Preview -->
+  <div id="photoModal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg" />
+    <div id="modalCaption" class="modal-caption"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
